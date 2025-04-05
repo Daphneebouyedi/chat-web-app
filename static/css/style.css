@@ -1,0 +1,247 @@
+:root {
+    --couleur-principale: #0084ff;
+    --fond-clair: white;
+    --fond-message-utilisateur: #0084ff;
+    --fond-message-contact: #0084ff;
+    --texte-clair: #fff;
+    --texte-fonce: black;
+    --fond-messages: rgb(230, 229, 229);
+    --bordure: #ddd;
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: var(--couleur-principale);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    height: 80vh;
+    background: var(--fond-clair);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--couleur-principale);
+    color: var(--texte-clair);
+    padding: 15px;
+    text-align: center;
+}
+
+#quit-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff4444;
+    color: var(--texte-clair);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    z-index: 10;
+}
+
+#quit-btn:hover {
+    background-color: #cc0000;
+}
+
+.messages-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 30vh;
+    border-top: 1px solid var(--bordure);
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fond-messages);
+}
+
+.message {
+    max-width: 30%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 7.5px;
+    line-height: 1.4;
+    position: relative;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.message-utilisateur {
+    align-self: flex-end;
+    background-color: var(--fond-message-utilisateur);
+    color: var(--texte-clair);
+    border-top-right-radius: 0;
+}
+
+.message-contact {
+    align-self: flex-start;
+    background-color: var(--fond-message-contact);
+    color: var(--texte-clair);
+    border-top-left-radius: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.message-nom {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message-date {
+    font-size: 0.7rem;
+    color: var(--texte-clair);
+    text-align: right;
+    margin-top: 5px;
+}
+
+.message-input {
+    padding: 15px;
+    background: var(--fond-clair);
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid var(--bordure);
+}
+
+#message {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid var(--bordure);
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#message:focus {
+    border-color: var(--couleur-principale);
+}
+
+#send-btn {
+    background-color: var(--couleur-principale);
+    color: var(--texte-clair);
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+#send-btn:hover {
+    background-color: #006acc;
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.buttons {
+    background: var(--fond-clair);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.buttons h3 {
+    color: var(--couleur-principale);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.buttons div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.buttons label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--texte-fonce);
+    font-weight: 500;
+}
+
+.buttons input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.buttons input[type="text"]:focus {
+    border-color: var(--couleur-principale);
+}
+
+.join {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.join input {
+    flex: 1;
+}
+
+button {
+    background-color: var(--couleur-principale);
+    color: var(--texte-clair);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #006acc;
+}
+
+.create-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    color: #ff4444;
+    text-align: center;
+}

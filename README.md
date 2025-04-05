@@ -1,6 +1,6 @@
 # chat-web-app
 
-Live Chat Application using Python, Flask, HTML, JavaScript and Socketio. 
+Live Chat Application using Python, Flask, HTML, CSS, JavaScript and Socketio. 
 
 Download Python 3.13
 

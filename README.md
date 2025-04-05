@@ -11,4 +11,4 @@ Install Flask and Socket io :
 To run the code : 
 python main.py
 
-Running on : http//127.0.0.1:5000
+Running on : http://127.0.0.1:5000
